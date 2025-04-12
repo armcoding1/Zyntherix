@@ -1,6 +1,6 @@
-use actix_web::web;
 use crate::controller::user_controller;
+use actix_web::web;
 
 pub fn config(cfg: &mut web::ServiceConfig) {
-    user_controller::config(cfg);
+    cfg.service(web::scope("/api/v1").configure(user_controller::config));
 }
