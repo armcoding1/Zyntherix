@@ -1,5 +1,6 @@
 mod controller;
 mod db;
+mod middleware;
 mod models;
 mod repository;
 mod routes;
@@ -7,10 +8,11 @@ mod service;
 
 use actix_web::{App, HttpServer, web};
 use db::init_db;
+use sqlx::PgPool;
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
-    let pool = init_db().await;
+    let pool: PgPool = init_db().await.expect("Failed to initialize the database.");
 
     HttpServer::new(move || {
         App::new()

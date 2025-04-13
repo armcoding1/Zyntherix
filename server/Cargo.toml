@@ -4,11 +4,24 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-actix-web = "4"
-sqlx = { version = "0.7", features = ["postgres", "runtime-tokio-native-tls", "macros", "chrono"] }
+actix-web = "4.0"
+sqlx = { version = "0.7", features = [
+    "postgres",
+    "runtime-tokio-native-tls",
+    "macros",
+    "chrono",
+] }
 tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 dotenv = "0.15"
 chrono = { version = "0.4", features = ["serde"] }
 rust_decimal = "1.17"
+bcrypt = "0.14"
+jsonwebtoken = "9"
+actix-web-httpauth = "0.8"
+env_logger = "0.11"
+log = "0.4"
+futures-util = "0.3.31"
+actix-service = "2.0.3"
+tracing = "0.1.41"
