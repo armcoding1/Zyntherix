@@ -1,5 +1,6 @@
 mod controller;
 mod db;
+mod middleware;
 mod models;
 mod repository;
 mod routes;

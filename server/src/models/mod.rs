@@ -1,3 +1,4 @@
+pub mod auth;
 pub mod finance;
 pub mod goal;
 pub mod habit;
